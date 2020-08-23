@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>input info</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link
@@ -13,6 +13,7 @@
       href="css/animation.css"
     />
     
+
     <style>
       /* 헤더 */
       header {
@@ -139,20 +140,22 @@
       .bottom-info .description {
         margin-top: 4px;
         line-height: 30px;
-        font-size: 10px;
-        height: 50px;
+        font-size: 15px;
+        height: 40px;
         bottom : 12px;
+        
       }
 
       .bottom-info button {
-        
         padding: 10px 20px;
         font-size: 15px;
         border: 1px solid rgba(255, 230, 207, 0.28);
         border-radius: 4px;
+        position: absolute;
         right: 24px;
         bottom: 24px;
       }
+
 
       .bottom-info {
         height: 212px;
@@ -202,7 +205,7 @@
       <li class="item mouse-effect">
         <div class="left">
           <img src="images/icon/account.svg" />
-          <div class="name">어쩌구</div>
+          <div class="na`me">어쩌구</div>
         </div>
         <div class="right"><img src="images/icon/right_arrow.svg" /></div>
       </li>
@@ -225,13 +228,13 @@
     </ul>
 
     <nav class="gnb">
-      <a href="index.html" class="cover mouse-effect">
+      <a href="#" class="cover mouse-effect">
         <img src="images/icon/cover.svg" />
       </a>
-      <a href="issue.html" class="issue mouse-effect">
+      <a href="#" class="issue mouse-effect">
         <img src="images/icon/issue.svg" />
       </a>
-      <a href="like.html" class="like mouse-effect">
+      <a href="#" class="like mouse-effect">
         <img src="images/icon/like.svg" />
       </a>
       <a href="index" class="my mouse-effect active">
@@ -239,30 +242,26 @@
       </a>
     </nav>
 
+   
     <div class="overlay"></div>
     <div class="modal-wrapper">
       <div class="modal-inner">
         <div class="thumb"></div>
         <div class="bottom-info">
-          <div class="title"></div>
           <p class="description">
-              <form name = "inputform" form action="checkinfo" method="POST">
-                나의 이름 : <input type="text" name ="user_name"> 
-                반려동물 이름 : <input type="text" name="pet_name"> 
-                반려동물 품종 : <input type="text" name="kind">
-                나이 : <input type="text" name = "age">
-                성별 : <input type = "radio" style="vertical-align: -16px;" name ="gender" value="수컷"> 수컷 <input type="radio" style="vertical-align: -16px;" name ="gender" value="암컷"> 암컷 
-                중성화: <input type="radio" style="vertical-align: -16px;" name ="Neutralization" value="YES"> O <input type="radio" style="vertical-align: -16px;" name ="Neutralization" value="NO"> X
-                동물 등록: <input type="radio" style="vertical-align: -16px;" name="Enrollment" value="YES"> O <input type="radio" style="vertical-align: -16px;" name="Enrollment" value="NO"> X <br/>
+              <li>이름 : <%=user_name%></li>
+              <li>동물 이름 : <%=pet_name%></li>
+              <li>품종 : <%=kind%></li>
+              <li>나이 : <%=age%></li>
+              <li>성별 : <%=gender%></li>
+              <li>중성화 : <%=neutralization%></li>
+              <li>동물 등록 : <%=enrollment%></li>
           </p> 
-          <div style="margin-left: 93%">
-              <input type="submit" value="Save">
-            </form>
+          <div style="margin-left: 93%">    
             <a href="mypage"><button type="button">Close</button></a>
           </div>
         </div>
       </div>
     </div>
-
   </body>
 </html>

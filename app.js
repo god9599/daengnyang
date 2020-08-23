@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const http = require('http');
 
+const checkinfoRouter = require("./routes/checkinfo");
 const inputinfoRouter = require("./routes/inputinfo");
 const mymodalRouter = require("./routes/mymodal");
 const reserveRouter = require("./routes/reserve");
@@ -32,5 +33,8 @@ app.use('/map',mapRouter);
 app.use('/reserve',reserveRouter);
 app.use('/mymodal',mymodalRouter);
 app.use('/inputinfo',inputinfoRouter);
+app.use('/checkinfo',checkinfoRouter);
+
+
 
 module.exports = app;
