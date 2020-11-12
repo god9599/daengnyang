@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Booking</title>
+    
+    <style>
+    body {
+    font-family: 'Raleway', sans-serif, Arial, Helvetica;
+    font-weight: 400;
+	color: #fff;
+	letter-spacing: 1px;
+
+}
+
+.container {
+	background-color: #fafafa;
+	margin: 40px;
+	box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
+	display: grid;
+	grid-template-columns: 100% 0%;
+}
+
+.container-time {
+	background-color: rgba(255, 255, 255, .95);
+	padding: 100px;
+	outline: 3px dashed #998100;
+	outline-offset: -10px;
+  /* 왼쪽에 점선 */
+	text-align: center;
+}
+.heading {
+    color:#998100;
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+.heading-days {
+	color:#998100;
+	font-size: 30px;
+
+}
+
+.heading-phone {
+    color:#998100;
+	font-size: 20px;
+}
+.container-form {
+	padding: 150px 0;
+	margin: 0 auto;
+	color: #000;
+}
+form {
+
+	display: grid;
+	grid-row-gap: 20px;
+}
+form p {
+
+	font-weight: 600;
+}
+.form-field {
+	display: flex;
+	justify-content: space-between;
+}
+
+input,select {
+	pad: 10px 15px;
+}
+
+.btn {
+	background-color: rgba(0, 0, 0, .95);
+	color: #fff;
+    text-align: center;
+	padding: 10px 20px;
+	border: none;
+	font-size: 18px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-ms-border-radius: 100px;
+	-o-border-radius: 100px;
+	box-shadow: 7px 10px 12px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+}
+
+.btn:hover {
+	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	box-shadow: 10px 12px 15px rgba(0, 0, 0, .3);
+}
+button{
+			all: unset;
+			background-color: #990000;
+			color: white;
+			padding: 15px 25px;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+		.modal{
+			position: fixed;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items : center;
+		}
+		.md_overlay {
+			background-color: rgba(0, 0, 0, 0.6);
+			width: 100%; height: 100%;
+			position: absolute;
+		}
+		.md_content {
+			width: 20%;
+			position: relative;
+			padding: 50px 100px;
+			background-color: white;
+			text-align: center;
+			border-radius: 6px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.20), 0 6px 6px rgba(0, 0, 0, 0.20);
+		}
+		h1 {
+			margin:0; 
+			padding: 5px;
+		}
+		.hidden {
+			display: none;
+		}
+		.modal_text { padding: 16px; }
+
+    </style>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+
+	
+		<!-- 여기까지가 검은색 반쪽  -->
+
+		<div class="container-form">
+				<form action="#">
+					<h2 class="heading heading-yellow" align = "center">결제하기</h2>
+
+					<div class="form-field">
+						<p>이름</p>
+						<input type="text" placeholder="이름" id="Name" readonly>
+					</div>
+					
+					<div class="form-field">
+						<p>이메일</p>
+						<input type="email" placeholder="이메일" id="Email" readonly>
+                    </div>
+
+                    <div class="form-field">
+						<p>반려견/묘 이름</p>
+						<input type="text" placeholder="반려견/묘 이름" id="Pet" readonly>
+                    </div>
+
+                    <div class="form-field">
+						<p>예약날짜</p>
+						<input type="text" placeholder="예약날짜" id="reservationDate" readonly>
+                    </div>
+                    
+                    <div class="form-field">
+						<p>예약시간</p>
+						<input type="text" placeholder="예약시간" id="Time" readonly>
+					</div>
+
+					<div class="form-field">
+						<p>미용종류</p>
+						<input type="text" placeholder="미용종류" id="Style" readonly>
+                    </div>
+                    
+                    <div class="form-field">
+						<p>주의사항</p>
+						<input type="text" placeholder="우리 아이의 주의사항을 적어주세요">
+                    </div>
+
+                    <div class="form-field">
+						<p>가격</p>
+						<input type="text" placeholder="가격" id="amount" readonly>
+
+					</div>
+                    
+                    <button type="button" id="PayBtn" class="btn" onclick="pay()">결제하기</button>
+                    <div class="modal hidden">
+                        <div class="md_overlay"></div>
+                        <div class="md_content">
+							<h1>결제 완료</h1>
+                            <section class="payment" id="payment"></section>
+							<button id="PayBtn2" onclick="window.location.href='/reservation'">확인</button>
+                        </div>
+					<!-- <button class="btn">Submit</button> -->
+				</form>
+		</div>
+	</div>
+
+
+	<!-- JQuery library file. requared all pages -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Template global script file. requared all pages -->
+	<script src="js/global.script.js"></script>
+	<script type="text/javascript">
+	
+		var userName = sessionStorage.getItem('Name');
+		var userEmail = sessionStorage.getItem('Email');
+		var userPet = sessionStorage.getItem('Pet');
+		var userDate = sessionStorage.getItem('reservationDate');
+		var userTime = sessionStorage.getItem('Time');
+		var userStyle = sessionStorage.getItem('Style');
+		var userTotal = sessionStorage.getItem('Total');
+		
+		Name.value=userName;
+		Email.value=userEmail;
+		Pet.value=userPet;
+		reservationDate.value=userDate;
+		Time.value=userTime;
+		Style.value=userStyle;
+		amount.value=userTotal;
+
+	
+		//필요한 엘리먼트들을 선택한다.
+		const openButton = document.getElementById("PayBtn");
+		const modal = document.querySelector(".modal");
+		const overlay = modal.querySelector(".md_overlay");
+		const closeButton = modal.querySelector("button");
+		//동작함수
+		const openModal = () => {
+			modal.classList.remove("hidden");
+		}
+		const closeModal = () => {
+			modal.classList.add("hidden");
+		}
+		//클릭 이벤트
+		openButton.addEventListener("click", openModal);
+		closeButton.addEventListener("click", closeModal);
+
+
+		var userEmail = "gpqls1458@naver.com";
+        var userPassword = "1234";
+        $.ajax({
+          url: "/login",
+          type: "POST",
+          data: {
+            userEmail: userEmail,
+            userPassword: userPassword,
+          },
+          success: function (data) {
+            console.log(data)
+			sessionStorage.setItem('ourToken', data)
+			//가져온 데이터를 ourToken이라는 변수에 저장
+          },
+		});
+	
+
+	function getQueryStringObject() {
+        var a = window.location.search.substr(1).split("&");
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i) {
+          var p = a[i].split("=", 2);
+          if (p.length == 1) b[p[0]] = "";
+          else b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+     	 }
+      	var qs = getQueryStringObject();
+		  
+		function comma(num) {
+       	 return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      	}
+      
+      	var jwtToken = sessionStorage.getItem("ourToken");
+      	console.log(qs, jwtToken);
+
+	function pay(){
+		var useFintechNo = "199164147057885100705315";
+		var to_fin_use_num = "8518142015";
+		//var jwtToken = sessionStorage.getItem("ourToken");
+     	//console.log(qs, jwtToken);
+		
+        $.ajax({
+          url: "/withdraw",
+          type: "POST",
+          headers: {
+            ourtoken: jwtToken,
+          },
+          data: {
+            fin_use_num: useFintechNo,
+            to_fin_use_num: to_fin_use_num,
+            amount: $("#amount").val(),
+          },
+          success: function (data) {
+			console.log(data);
+			$("#payment").append(
+				'<div class="modal_text">'+
+					data.dps_account_holder_name+'님의 계좌 '+ data.fintech_use_num+'에서'+data.tran_amt+'원이 출금되었습니다.'+
+                '</div>'
+			)
+          },
+        });
+	  }
+
+
+	</script>
+
+</body>
+</html>

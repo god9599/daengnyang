@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const database = require( './data');
-const data = require('./data');
 
 router.get('/',function(req,res,next){
     res.render('checkinfo', database[0]);
@@ -9,7 +8,7 @@ router.get('/',function(req,res,next){
 
 router.post('/',async function(req,res,next){
     
-    let user_name = req.body.user_name;
+    let user_name = req.body.user_name; 
     let pet_name = req.body.pet_name;
     let kind = req.body.kind;
     let age = req.body.age;
@@ -20,6 +19,7 @@ router.post('/',async function(req,res,next){
     console.log("데이터 넣기 전: ",database)
 
     await database.push({
+        email : "test@test.com",
         user_name,
         pet_name,
         kind,
@@ -31,6 +31,7 @@ router.post('/',async function(req,res,next){
 
     console.log("데이터 넣은 후: ",database)
    
+    res.render('checkinfo',database[0])
 })  
 
 module.exports=router;

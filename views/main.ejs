@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <title>댕냥댕냥</title>
+
+  <!-- Google font file. If you want you can change. -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
+
+  <!-- Fontawesome font file css -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min1.css">
+
+  <!-- Template global css file. Requared all pages -->
+  <link rel="stylesheet" type="text/css" href="css/global1.style.css">
+
+  <!--global 수정 css-->
+  <link rel="stylesheet" type="text/css" href="css/dn.style1.css">
+
+  <!-- swiper img css-->
+  <link rel="stylesheet" type="text/css" href="css/swiper-image.style1.css">
+
+  <!--swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <!-- icon -->
+  <script src="https://kit.fontawesome.com/895319919a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="wrapper-inline">
+    <!-- Header area start -->
+    <header>
+      <!-- extra class no-background -->
+      <h1 class="page-title"><i class="fas fa-paw">댕냥댕냥</i></h1>
+      <div>
+        <a href="mypage">
+          <div class="nav_icon">
+            <i class="far fa-user-circle fa-2x"></i>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href="qrcode">
+          <div class="nav_icon">
+            <i class="fas fa-qrcode fa-2x"></i>
+          </div>
+        </a>
+      </div>
+    </header>
+    <!-- Header area end -->
+    <!-- Page content start -->
+    <main>
+      <div class="container" style="padding: 0px;">
+        <div class="nav_box">
+          <a href="storeList" class="nav_box_item">
+            <span class="nav_box_title">미용예약</span>
+          </a>
+        </div>
+
+        <div class="nav_box">
+          <a href="insuranceByCollaborativeFiltering" class="nav_box_item">
+            <span class="nav_box_title">보험추천</span>
+          </a>
+        </div>
+
+        <div class="img_swiper">
+          <!-- Swiper -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img class="img_slide"
+                  src="/images/main.jpg"></div>
+              <div class="swiper-slide"><img class="img_slide"
+                  src="/images/ad1.jpg"></div>
+              <div class="swiper-slide"><img class="img_slide"
+                  src="/images/ad2.jpg">
+              </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-divider"></div>
+
+      <footer>
+        <div class="container">
+          <p>문의메일 : daengnyang@gmail.com<br>
+            © daengnyang All rights reserved.</p>
+        </div>
+      </footer>
+
+    </main>
+    <!-- Page content end -->
+  </div>
+  </div>
+
+
+  <!-- JQuery library file. requared all pages -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+
+  <!-- Template global script file. requared all pages -->
+  <script src="js/global.script.js"></script>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+</body>
+
+
+</html>

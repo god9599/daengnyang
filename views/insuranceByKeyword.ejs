@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Insurance | 보험 키워드 찾기</title>
+
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="css/insuranceByKeyword.css">
+
+</head>
+
+<body>
+    <div id="site-content">
+        <header>
+            <!-- extra class no-background -->
+            <h1 class="page-title">댕냥댕냥</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="page">
+                <div class="container">
+                    <a href="javascript:history.back();">
+                        <div class="prev-icon">
+                            <div class="prev-arrow"></div>
+                        </div>
+                    </a>
+                    <h3 class="entry-title">펫보험 비교보기</h3>
+                    <p>[필독!] 아래 보험사별 보험료와 보상조건 등은 고객의 이해를 돕기 위해 제공하는 것으로 보험가입시 차이가 발생할 수 있습니다.</p>
+                    <p>가입전 반드시 실제 보험료와 약관을 확인하시기 바랍니다.</p>
+
+                    <div class="filter-links filterable-nav">
+                        <strong> 키워드 </strong>
+                        <div class="contain-fluid" style="display: flex;">
+                            <div class="button-group" data-filter-group="medical">
+                                <strong> 의료비 </strong>
+                                <a href="#" class="current wow fadeInRight" data-filter="">전체</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".ok-medical">지원</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".no-medical">미지원</a>
+                            </div>
+                            <div class="button-group" data-filter-group="registered" style="margin-left: 10px">
+                                <strong> 동물 등록여부 </strong>
+                                <a href="#" class="current wow fadeInRight" data-filter="">전체</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".registered">등록</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".unregistered">미등록</a>
+                            </div>
+                            <div class="button-group" data-filter-group="funeral" style="margin-left: 10px">
+                                <strong> 장례비 </strong>
+                                <a href="#" class="current wow fadeInRight" data-filter="">전체</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".ok-funeral">지원</a>
+                                <a href="#" class="wow fadeInRight" data-filter=".no-funeral">미지원</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filterable-items">
+                        <div class="insurance-item filterable-item a">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .page -->
+        </main>
+
+    </div>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script>
+        $.ajax({
+            url: "/insurance",
+            type: "POST",
+            success: function (data) {
+                const insurances = JSON.parse(data);
+                for (var i = 0; i < insurances.insurances.length; i++) {
+                    $('.filterable-items').prepend(
+                        '<div class="insurance-item filterable-item ' +
+                        insurances.insurances[i].category +
+                        '"> <div class="card"> <div class="card-image"> <img src=' +
+                        insurances.insurances[i].img +
+                        '></div><div class="card-text"> <span class="date" style="color:' +
+                        insurances.insurances[i].color +
+                        '";>' +
+                        insurances.insurances[i].company +
+                        '</span><h2>' +
+                        insurances.insurances[i].insuranceName +
+                        '</h2><p>' +
+                        insurances.insurances[i].price +
+                        '</p></div> <div class="card-stats" style="background-color:' +
+                        insurances.insurances[i].color +
+                        '";> <div class="stat border"> <div class="value">자세히</div> <div class="type">views</div> </div> <div class="stat"> <div class="value">가입</div> <div class="type">buy</div></div></div></div></div>'
+                    );
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

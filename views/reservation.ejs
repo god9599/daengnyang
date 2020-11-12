@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Booking</title>
+    
+    <style>
+    body {
+    font-family: 'Raleway', sans-serif, Arial, Helvetica;
+    font-weight: 400;
+	color: #fff;
+	letter-spacing: 1px;
+
+}
+
+.container {
+	background-color: #fafafa;
+	margin: 40px;
+	box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+
+.container-time {
+	background-color: rgba(255, 255, 255, .95);
+	padding: 100px;
+	outline: 3px dashed #998100;
+	outline-offset: -10px;
+  /* 왼쪽에 점선 */
+	text-align: center;
+}
+.heading {
+    color:#998100;
+	font-size: 35px;
+	text-transform: uppercase;
+}
+
+.heading-days {
+	color:#998100;
+	font-size: 30px;
+
+}
+
+.heading-phone {
+    color:#998100;
+	font-size: 20px;
+}
+.container-form {
+	padding: 180px 0;
+	margin: 0 auto;
+	color: #000;
+}
+form {
+
+	display: grid;
+	grid-row-gap: 20px;
+}
+form p {
+
+	font-weight: 600;
+}
+.form-field {
+	display: flex;
+	justify-content: space-between;
+}
+
+input,select {
+	pad: 10px 15px;
+}
+
+.btn {
+	background-color: rgba(0, 0, 0, .95);
+	color: #fff;
+    text-align: center;
+	padding: 10px 20px;
+	border: none;
+	font-size: 18px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-ms-border-radius: 100px;
+	-o-border-radius: 100px;
+	box-shadow: 7px 10px 12px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+}
+
+.btn:hover {
+	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-o-transform: scale(1.03);
+	box-shadow: 10px 12px 15px rgba(0, 0, 0, .3);
+}
+button{
+			all: unset;
+			background-color: #990000;
+			color: white;
+			padding: 15px 25px;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+
+.modal{
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items : center;
+		}
+.md_overlay {
+		background-color: rgba(0, 0, 0, 0.6);
+		width: 100%; height: 100%;
+		position: absolute;
+		}
+.md_content {
+		width: 20%;
+		position: relative;
+		padding: 50px 100px;
+		background-color: white;
+		text-align: center;
+		border-radius: 6px;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.20), 0 6px 6px rgba(0, 0, 0, 0.20);
+		}
+		h1 {
+			margin:0; 
+			padding: 5px;
+		}
+		.hidden {
+			display: none;
+		}
+	.modal_text { padding: 16px; }
+
+	a {
+		text-decoration:none; 
+		font-size:18px; 
+		color:#fff; 
+		display:block; 
+		width:100%; 
+		height:100%;
+	}
+
+	ul {list-style:none;}
+
+	li{
+		width:17%; 
+		height:30px; 
+		background: black; 
+		float:left; 
+		margin-right:10px; 
+		margin-top:20px;
+		margin-left:20px; 
+		border-radius:15px;
+	}
+
+	
+	iframe{
+		width: 450px;
+		height: 450px;
+		margin-right:10px; 
+		margin-top:20px; 
+		border:none;
+	}
+
+	img{
+		position: absolute; 
+		left:50%; top:50%; 
+	}
+
+	li a{
+		text-align:center;
+		border-radius:15px;
+	}
+	li a:hover{
+		color:#998100; 
+		background-color:bisque;
+	}
+    </style>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="container-time">
+				<h2 class="heading" id="storeName"></h2>
+				<div id = "wrap">
+					<div id = "food">
+						<ul>
+							<li><a href="images/content/cut1.png" target="photo">브로콜리컷</a></li>
+							<li><a href="images/content/cut2.png" target="photo">얼굴컷</a></li>
+							<li><a href="images/content/cut3.png" target="photo">베이비컷</a></li>
+							<li><a href="images/content/cut4.png" target="photo">곰돌이컷</a></li>
+						</ul>
+					</div>
+	
+					<div id="photo">
+						<!--<iframe src="img/content/mainimg.png" width="450" height="450" name="photo" scrolling="no" id="storeImg"></iframe>-->
+					</div>
+				</div>
+
+				<hr>
+
+				
+				<h1 class="heading-days">Monday-Friday</h1>
+				<p style="color:black;">7am - 11am (breakfast)</p>
+				<p style="color:black;">11am - 10pm (lunch/dinner)</p>
+
+				<h1 class="heading-days">Saturday and sunday</h1>
+				<p style="color:black;">9am - 1am (breakfast)</p>
+				<p style="color:black;">1am - 10pm (lunch/dinner)</p>
+
+				<hr>
+
+				<h2 class="heading-phone">Call Us: (123) 4545-6789</h2>
+				<p style="color:black;" id="storeLocation"></p>
+		</div>
+
+
+		<div class="container-form">
+				<form action="#">
+					<h2 class="heading heading-yellow" align = "center">예약하기</h2>
+
+					<div class="form-field">
+						<p>이름</p>
+						<input type="text" id="Name" value="<%=user_name%>" placeholder="이름">
+					</div>
+					
+					<div class="form-field">
+						<p>이메일</p>
+						<input type="email" id="Email" value="<%=email%>" placeholder="이메일">
+					</div>
+					<div class="form-field">
+						<p>반려견/묘 이름</p>
+						<input type="email" id="Pet" value="<%=pet_name%>" placeholder="반려견/묘 이름">
+					</div>
+
+					<div class="form-field">
+						<p>예약날짜</p>
+						<input type="text" value="<%=day%>" id="reservationDate">
+					</div>
+
+					<div class="form-field">
+						<p>예약시간</p>
+						<input type="text" value="<%=time%>" id="Time">
+					</div>
+
+					<div class="form-field">
+						<p>미용종류</p>
+						<select name="select" onchange="s1Change()" id="Style">
+							<option value="브로콜리컷">브로콜리컷</option>
+							<option value="얼굴컷">얼굴컷</option>
+							<option value="베이비컷">베이비컷</option>
+							<option value="곰돌이컷">곰돌이컷</option>
+						</select>
+					</div>
+					<div class="form-field">
+						<p>가격</p>
+						<input type="text" value="  " id="Total">
+					</div>
+					
+                    <button type="button" id="submitBtn" class="btn")>결제하기</button>
+                    <div class="modal hidden">
+                        <div class="md_overlay"></div>
+                        <div class="md_content">
+                            <h1>예약하시겠습니까?</h1>
+                            <div class="modal_text" ></div>
+							<br><br>
+							<button type="button" id ="noBtn" class = "button" >X</button>
+							<button type="button" id ="yesBtn" class = "button" onclick="window.location.href='/payment'">O</button>
+                        </div>
+				</form>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+
+	function s1Change()
+	{
+		var sel = document.getElementById("Style");
+		if( sel.value == "브로콜리컷" ) {
+			Total.value="8000";
+		}
+		else if( sel.value == "얼굴컷" ) {
+			Total.value="9000";
+		}
+		else if( sel.value == "베이비컷" ) {
+			Total.value="10000";
+		}
+		else if( sel.value == "곰돌이컷" ) {
+			Total.value="11000";
+		}
+	}
+	
+		//필요한 엘리먼트들을 선택한다.
+		const openButton = document.getElementById("submitBtn");
+		const modal = document.querySelector(".modal");
+		const overlay = modal.querySelector(".md_overlay");
+		const closeButton = modal.querySelector("button");
+		
+		//동작함수
+		const openModal = () => {
+			modal.classList.remove("hidden");
+		}
+		const closeModal = () => {
+			modal.classList.add("hidden");
+		}
+		//클릭 이벤트
+		openButton.addEventListener("click", openModal);
+		closeButton.addEventListener("click", closeModal);
+	
+	</script>
+
+
+	<!-- JQuery library file. requared all pages -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Template global script file. requared all pages -->
+	<script src="js/global.script.js"></script>
+	<script>
+
+	var _store = "<%=JSON.stringify(store)%>";
+    console.log(_store);
+    _store = _store.replace(/&#34;/gi, '\"'); //따옴표 오류 처리
+    _store = JSON.parse(_store);
+    console.log(_store);
+    console.log(_store.id);
+	console.log(_store.cost_list);
+	
+	$("#storeName").append(_store.name);
+	$("#storeLocation").append(_store.location);
+
+	$("#photo").append(      
+		'<iframe src=' + _store.src + ' width="450" height="450" name="photo" scrolling="no" id="storeImg"></iframe>'
+    );
+				
+
+		$("#submitBtn").click(function(){
+			// #ajax 아이디 패스워드를 post 방식으로 '/reservation' 라우터에 데이터를 전송
+			var Name = $("#Name").val();
+			var Email = $("#Email").val();
+			var Pet = $("#Pet").val();
+			var reservationDate = $("#reservationDate").val();
+			var Time = $("#Time").val();
+			var Style = $("#Style").val();
+			var Total = $("#Total").val();
+
+			$('.modal_text').html( "이름: " + Name+"<br/>"+
+			"이메일: "+Email+"<br/>"+"반려견/묘 이름: " + Pet+"<br/>"+"예약날짜: "+reservationDate+"<br/>"+"예약시간: "+Time+"<br/>"+"미용 종류: "+Style+"<br/>"+"가격: " + Total )
+//$_GET["id"]
+			$.ajax({
+			url: "/reservation",
+			type: "POST",
+			data: {
+				Name: Name,
+				Email: Email,
+				Pet : Pet,
+				Date: reservationDate,
+				Time: Time,
+				Style: Style,
+				Total: Total
+			},
+			success: function (data) {
+				localStorage.setItem('reservationData', data)
+				console.log(data)
+			},
+		});
+		sessionStorage.setItem('Name', Name);
+		sessionStorage.setItem('Email', Email);
+		sessionStorage.setItem('Pet', Pet);
+		sessionStorage.setItem('reservationDate', reservationDate);
+		sessionStorage.setItem('Time', Time);
+		sessionStorage.setItem('Style', Style);
+		sessionStorage.setItem('Total', Total);
+		
+
+	})
+		</script>
+	</body>
+</html>

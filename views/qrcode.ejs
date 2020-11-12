@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <title>댕냥댕냥</title>
+
+  <!-- Google font file. If you want you can change. -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet" />
+
+  <!-- Fontawesome font file css -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+  <!-- Template global css file. Requared all pages -->
+  <link rel="stylesheet" type="text/css" href="css/global1.style.css" />
+
+  <!--global 수정 css-->
+  <link rel="stylesheet" type="text/css" href="css/dn.style1.css">
+
+  <!-- icon -->
+  <script src="https://kit.fontawesome.com/895319919a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="wrapper-inline">
+      <!-- Header area start -->
+      <header>
+        <!-- extra class no-background -->
+        <a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+        <h1 class="page-title"><i class="fas fa-paw">댕냥댕냥</i></h1>
+      </header>
+      <!-- Header area end -->
+
+
+      <!-- Page content start -->
+      <main>
+        <div class="form-divider"></div>
+        <div class="form-divider"></div>
+
+        <div class="container">
+          <div id="qrcode" style="display: block;padding-left: auto;padding-right: auto;"></div>
+        </div>
+
+        <div class="form-divider"></div>
+
+
+        <footer>
+          <p>문의메일 : daengnyang@gmail.com<br>
+            © daengnyang All rights reserved.</p>
+        </footer>
+      </main>
+      <!-- Page content end -->
+    </div>
+  </div>
+
+
+  <!-- JQuery library file. requared all pages -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <!-- Template global script file. requared all pages -->
+  <script src="js/global.script.js"></script>
+  <script src="js/qrcode.js"></script>
+  <script>
+    $.ajax({
+      url: "/qrcode",
+      method: "POST",
+      success: function (data) {
+        console.log(data.res_list[0]);
+        new QRCode(document.getElementById("qrcode"), data.res_list[0].fintech_use_num);
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <title>댕냥댕냥</title>
+
+  <!-- Google font file. If you want you can change. -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet" />
+
+  <!-- Fontawesome font file css -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min1.css" />
+
+  <!-- Template global css file. Requared all pages -->
+  <link rel="stylesheet" type="text/css" href="css/global1.style.css" />
+
+  <!--global 수정 css-->
+  <link rel="stylesheet" type="text/css" href="css/dn.style1.css">
+
+  <!-- icon -->
+  <script src="https://kit.fontawesome.com/895319919a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="wrapper-inline">
+      <!-- Header area start -->
+      <header>
+        <!-- extra class no-background -->
+        <a class="go-back-link" href="javascript:history.back();">
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        <h1 class="page-title"><i class="fas fa-paw">댕냥댕냥</i></h1>
+      </header>
+      <!-- Header area end -->
+
+
+      <!-- Page content start -->
+      <main>
+
+        <div class="form-divider"></div>
+
+
+        <div id="bookStoreId">예약정보 <br>storeId : <%=storeId%></div>
+        <div id="bookDay">day : <%=day%></div>
+        <div id="bookTime">time : <%=time%></div>
+
+        <form>
+          <br>
+          <input type='date' id='bookDate' value='<%=day%>'><br><br>
+          <input type='time' id='bookTime' value='<%=time%>'><br><br>
+          <input type='text' id='bookTimeText' value='<%=time%>'><br><br>
+        </form>
+
+        <div id="storeInfo">가게 정보<br></div>
+        <div id="storeCost">가격표 : </div>
+
+        <div class="form-divider"></div>
+
+        <footer>
+          <p>문의메일 : daengnyang@gmail.com<br>
+            © daengnyang All rights reserved.</p>
+        </footer>
+      </main>
+      <!-- Page content end -->
+    </div>
+  </div>
+
+  <!-- JQuery library file. requared all pages -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <!-- Template global script file. requared all pages -->
+  <script src="js/global.script.js"></script>
+
+  <script>
+
+    var _store = "<%=JSON.stringify(store)%>";
+    console.log(_store);
+    _store = _store.replace(/&#34;/gi, '\"'); //따옴표 오류 처리
+    _store = JSON.parse(_store);
+    console.log(_store);
+    console.log(_store.id);
+    console.log(_store.cost_list);
+
+
+    $("#storeInfo").append(
+      'storeId : ' + _store.id +
+      '<br>' + 'storeName : ' + _store.name +
+      '<br>' + 'storeLocation : ' + _store.location +
+      '<br>' + 'img : ' + '<br>' + '<img src=' + _store.src + ' width="200" height="200">' + '<br>'
+    );
+
+
+
+    $("#storeCost").append(
+      '<tr><td>' +
+      '5kg 이하 : ' +
+      '</td><td>' +
+      _store.cost_list.cost_1 +
+      '</td></tr><td>' +
+      '8kg 이하 : ' +
+      '</td><td>' +
+      _store.cost_list.cost_2 +
+      '</td></tr><td>' +
+      '11kg 이하 : ' +
+      '</td><td>' +
+      _store.cost_list.cost_3 +
+      '</td><td>' +
+      '</td></tr><td>' +
+      '11kg 이상 : ' +
+      '</td><td>' +
+      _store.cost_list.cost_4 +
+      '</td></tr>'
+    );
+
+
+  </script>
+</body>
+
+</html>

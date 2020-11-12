@@ -1,0 +1,394 @@
+/*** 
+====================================================================
+  Table of contents
+====================================================================
+
+- [0. Reset and Set Defaults]
+- [1. Body]
+- [2. Header]
+- [3. Container]
+- [4. Page]
+- [5. Filterable]
+- [6. Prev Arrow]
+
+***/
+
+
+/*=========================================== 
+[0. Reset and Set Defaults]
+ *===========================================*/
+
+hr {
+    border: none;
+    border-bottom: 1px solid #777;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #0f75bd;
+}
+
+h3,
+p, strong {
+    color: gray;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/*=========================================== 
+[1. Body]
+ *===========================================*/
+
+body {
+    font-size: 16px;
+    font-weight: 300;
+    background: url("../images/background2.png");
+    line-height: normal;
+}
+
+
+/*=========================================== 
+[2. Header]
+ *===========================================*/
+
+header .page-title {
+    font-size: 16px;
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: 15px;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*=========================================== 
+[3. Container]
+ *===========================================*/
+
+.container {
+    width: 1172px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    *zoom: 1;
+}
+
+.container:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0;
+}
+
+/* @media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+@media screen and (max-width: 990px) {
+    .insurance-item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .insurance-item {
+        width: 100%;
+    }
+} */
+
+
+/*=========================================== 
+[4. Page]
+ *===========================================*/
+
+.page {
+    padding: 50px 0;
+}
+
+.page p {
+    line-height: 2;
+}
+
+
+/*=========================================== 
+[5. Filterable]
+ *===========================================*/
+
+.filterable-nav {
+    margin: 50px 0 30px;
+}
+
+.filterable-nav .mobile-filter {
+    display: none;
+}
+
+.filterable-nav strong {
+    font-weight: 300;
+    margin-right: 10px;
+}
+
+.filterable-nav a {
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: rgb(239, 239, 239);
+    color: #768089;
+    display: inline-block;
+    margin-bottom: 10px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.filterable-nav a.current,
+.filterable-nav a:hover {
+    color: #0f75bd;
+    border-color: #0f75bd;
+}
+
+.filterable-items {
+    margin: 0 -15px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.insurance-item {
+    width: 33.3333%;
+    padding: 15px;
+}
+
+.insurance-item .insurance-content {
+    background: red;
+    border-radius: 3px;
+    padding: 30px;
+    text-align: center;
+}
+
+.insurance-item .insurance-title {
+    font-size: 36px;
+    font-size: 2.25em;
+    font-weight: 300;
+    color: #0f75bd;
+}
+
+
+/*-------------------------------------------------------------------
+[5. Card]
+*------------------------------------------------------------------*/
+
+.card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 110px 210px 80px;
+    grid-template-areas: "image" "text" "stats";
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    font-family: roboto;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.card .multi-image {
+    z-index: 0;
+    position: absolute;
+    right: 50%;
+    width: 0rem;
+    height: 0rem;
+    transform: translate(-50%, -50%);
+    transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.card .multi-image img {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 50%;
+    /* height: 1rem; */
+    border: none;
+    /* border-radius: 100%; */
+    background: var(--background);
+    color: var(--text);
+    transform: translate(250%, 0%);
+    cursor: pointer;
+    transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+    box-shadow: 0 0 0rem -0.25rem var(--background);
+}
+
+.card .multi-image img:hover {
+    background: var(--text);
+    color: var(--background);
+    box-shadow: 0 0 1rem -0.25rem var(--background);
+}
+
+.card:hover .multi-image,
+.card .multi-image:focus-within {
+    width: 10rem;
+    height: 10rem;
+}
+
+.card-image img {
+    grid-area: image;
+    width: 80%;
+    margin-top: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+
+.card-text {
+    grid-area: text;
+    margin: 25px;
+}
+
+.card-text .date {
+    color: rgb(255, 7, 110);
+    font-size: 13px;
+}
+
+.card-text p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.card-text h2 {
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+.card-stats {
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(255, 7, 110);
+}
+
+.card-stats .stat {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.card-stats .border {
+    border-right: 1px solid white;
+}
+
+.card-stats .value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.card-stats .value sup {
+    font-size: 12px;
+}
+
+.card-stats .type {
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+/*-------------------------------------------------------------------
+[6. Prev Arrow]
+*------------------------------------------------------------------*/
+
+.prev-icon {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    position: absolute;
+    top: 25px;
+    width: 90%;
+    height: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    animation: arrow 700ms linear infinite;
+}
+
+.prev-arrow::after,
+.prev-arrow::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    left: -8px;
+    background-color: #fff;
+}
+
+.prev-arrow::after {
+    top: -12px;
+    transform: rotate(-45deg);
+}
+
+.prev-arrow::before {
+    top: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    transform: rotate(45deg);
+}

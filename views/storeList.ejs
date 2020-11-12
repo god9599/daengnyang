@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <title>댕냥댕냥</title>
+
+    <!-- Google font file. If you want you can change. -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet" />
+
+
+    <!-- Fontawesome font file css -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min1.css" />
+
+    <!-- Template global css file. Requared all pages -->
+    <link rel="stylesheet" type="text/css" href="css/global1.style.css" />
+
+    <!--global 수정 css-->
+    <link rel="stylesheet" type="text/css" href="css/dn.style1.css">
+
+    <!-- Swiper slider css file -->
+    <link rel="stylesheet" href="css/swiper.min1.css">
+
+    <!--turbo slider plugin css file -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css">
+
+
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/895319919a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper-inline">
+            <!-- Header area start -->
+            <header>
+                <!-- extra class no-background -->
+                <a class="go-back-link" href="javascript:history.back();">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <h1 class="page-title"><i class="fas fa-paw">댕냥댕냥</i></h1>
+            </header>
+            <!-- Header area end -->
+
+
+            <!-- Page content start -->
+            <main>
+
+                <div class="form-divider"></div>
+
+                <div class="form-divider"></div>
+
+                <!-- Store list start -->
+                <section class="container">
+                    <div class="search-result-container"></div>
+                </section>
+                <!-- Store list end -->
+
+
+                <!-- Book info start invisible-->
+                <section class="container o-hidden" style="visibility : hidden">
+                    <h4 class="title-main">날짜</h4>
+
+                    <form method="POST" action="/reservation">
+                        <!-- input type hidden -->
+                        <input type="hidden" id="storeId" name="storeId" value="">
+
+                        <div class="swiper-recievers">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayA" name="day" value="2020-08-21">
+                                        <label for="dayA">8/21</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayB" name="day" value="2020-08-22">
+                                        <label for="dayB">8/22</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayC" name="day" value="2020-08-23">
+                                        <label for="dayC">8/23</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayD" name="day" value="2020-08-24">
+                                        <label for="dayD">8/24</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayE" name="day" value="2020-08-25">
+                                        <label for="dayE">8/25</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayF" name="day" value="2020-08-26">
+                                        <label for="dayF">8/26</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayG" name="day" value="2020-08-27">
+                                        <label for="dayG">8/27</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayH" name="day" value="2020-08-28">
+                                        <label for="dayH">8/28</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="dayI" name="day" value="2020-08-29">
+                                        <label for="dayI">8/29</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <h4 class="title-main">시간</h4>
+
+                        <div class="swiper-recievers">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeTen" name="time" value="10:00">
+                                        <label for="timeTen">10:00</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeTwelve" name="time" value="12:00">
+                                        <label for="timeTwelve">12:00</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeTwo" name="time" value="14:00">
+                                        <label for="timeTwo">14:00</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeFour" name="time" value="16:00">
+                                        <label for="timeFour">16:00</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeSix" name="time" value="18:00">
+                                        <label for="timeSix">18:00</label>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="money-receiver">
+                                        <input type="radio" id="timeEight" name="time" value="20:00">
+                                        <label for="timeEight">20:00</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br>
+                        <input type="submit" value="예약" class="book_btn">
+                        <div class="form-divider"></div>
+                    </form>
+
+                </section>
+                <!-- Book info end -->
+
+
+                <div class="form-divider"></div>
+
+                <footer>
+                    <p>문의메일 : daengnyang@gmail.com<br>
+                        © daengnyang All rights reserved.</p>
+                </footer>
+            </main>
+            <!-- Page content end -->
+        </div>
+    </div>
+    <!-- JQuery library file. requared all pages -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Template global script file. requared all pages -->
+    <script src="js/global.script.js"></script>
+
+
+    <script>
+
+
+        //Book info
+        function bookInfo(elmt) {
+            var node = elmt.parentNode.parentNode;
+
+            console.log(node.nodeName);
+            console.log(document.querySelector(".form-divider").nodeName)
+            document.querySelector(".o-hidden").style.visibility = "visible";
+            console.log(document.querySelector(".o-hidden"))
+            node.appendChild(document.querySelector(".o-hidden"));
+            document.getElementById("storeId").value = elmt.value;
+        }
+
+
+        //store list
+        $.ajax({
+            url: "/storeList",
+            method: "post",
+            success: function (data) {
+                console.log("storeList :", data)
+                var stores = data;
+
+                console.log("storeList :", stores)
+
+                for (var i = 0; i < stores.length; i++) {
+                    var store = stores[i];
+                    console.log("store : ", store)
+
+
+                    $(".search-result-container").append(
+                        '<div class="news-list-item">' +
+
+                        '<div class="list-image">' +
+                        '<img src=' + store.src + ' alt="상점사진" width="100" height="100">' +
+                        '</div>' +
+
+                        '<div class="list-content">' +
+
+                        '<button class="store_title" onclick="bookInfo(this)" value= ' + store.id + '><h2 class="list-title">' + store.name + '</h2></button>' +
+                        '<br> <p class="list-author">' + store.location + '</p>' +
+
+                        '</div>' +
+
+                        '</div>' +
+
+                        '<div class="form-mini-divider"></div>'
+                    )
+                }
+            }
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

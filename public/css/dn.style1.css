@@ -1,0 +1,92 @@
+header {  
+  height: 60px;
+  padding-top : 15px;
+  padding-bottom : 15px;
+  background-color : #e0cdb8;
+  border-bottom: none;
+}
+
+header .page-title{
+  font-size : 23px;
+  top: 15px;
+}
+
+.nav_icon{
+  width: 30px;
+  height: 30px;
+  float: right;
+  position: relative;
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+body{
+  color : #404040;
+}
+
+main{
+  background-color: #fff;
+  margin-top: 60px;
+}
+
+.nav_box{
+  width: 50%;
+  float: left;
+}
+
+.nav_box_item{
+  padding: 5px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  background-color: #efe6dc;
+  text-align: center;
+  display: block;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.nav_box_title{
+  font-size: 16px;  
+  font-weight: 700;
+  line-height: 28px;
+  display: block;
+  width: 100%;
+  float: left;
+}
+
+.list-box.half-box .list-item{
+  margin-bottom: 30px;   
+  background-color : #efe6dc;
+}
+
+.list-box.half-box .list-item .list-item-title{
+  font-size : 16px; 
+}
+
+footer{
+  font-size : 14px;
+  background-color: #e8daca;
+}
+
+.wrapper-inline{
+  background-color: #e8daca;
+}
+
+.store_title{  
+  background-color: white;
+  border: white;
+  color: #4c4c4c;
+}
+
+.book_btn{
+  background-color: #e8daca;
+  border: gray;
+  margin-left: 5px;
+}
+
+/* 버튼 클릭시 생기는 경계선 제거*/
+*:focus {
+  outline:none !important;
+}
+
